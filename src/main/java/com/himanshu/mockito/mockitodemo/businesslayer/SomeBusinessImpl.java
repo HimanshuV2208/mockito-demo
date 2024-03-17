@@ -3,7 +3,11 @@ package com.himanshu.mockito.mockitodemo.businesslayer;
 import com.himanshu.mockito.mockitodemo.services.DataService;
 
 public class SomeBusinessImpl {
-    private DataService dataService;
+    private final DataService dataService;
+
+    public SomeBusinessImpl(DataService dataService) {
+        this.dataService = dataService;
+    }
 
     public int findGreatestFromAllData() {
         int[] data = dataService.retrieveAllData();
